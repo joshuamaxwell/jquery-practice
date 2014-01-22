@@ -8,11 +8,16 @@ $(document).ready( function () {
   // var windowHeight = $(window).height();
   // $('.hero').css('height', windowHeight-20);
 
-  var numBoxes = $('.hero .container').children().length;
-  console.log(numBoxes);
+//Here's example number 1
+  $('.color-changer').click ( function () {
+      $(this).css('background', 'red');
+  });
+
+//example number 2
 
 
-
+  // var numBoxes = $('.hero .container').children().length;
+  // console.log(numBoxes);
 //next element sibling could do this?
   // var x = 0;
   // while (x < numBoxes - 1) {

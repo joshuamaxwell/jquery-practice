@@ -16,6 +16,7 @@ body {
   //
   outline: 1px dashed gray;
   //
+  position: relative;
   width: 960px;
   margin: 0 auto;
   padding: 0px;
@@ -94,5 +95,53 @@ body {
 } // end link-div
 
 .examples {
-  height: 900px;
-}
+  //
+  outline: 1px dashed pink;
+  //
+  position: relative;
+
+  $exampleHeight: 300px;
+
+  .container {
+    font-size: 20px;
+    color: white;
+    margin: 30px auto;
+    height: $exampleHeight;
+    background: $contrast-color;
+  }
+
+  .explanation {
+    //
+    outline: 1px dashed lime;
+    //
+    line-height: 150%;
+    letter-spacing: 1px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    width: 278px;
+  }
+
+  .example {
+    //
+    outline: 1px dashed orange;
+    //
+    position: relative;
+    width: 636px;
+    height: $exampleHeight;
+    display: inline-block;
+  }
+
+} // end of examples
+
+.example1 {
+
+  .color-changer {
+    width: 200px;
+    height: 200px;
+    margin: 60px auto;
+    background: rgb(0, 0, 200);
+  }
+
+
+} // end of .example1

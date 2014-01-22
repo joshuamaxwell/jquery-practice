@@ -1,0 +1,1 @@
+$(document).ready(function(){console.log("the document is ready and the script ran"),$(".color-changer").click(function(){$(this).css("background","red")})});
