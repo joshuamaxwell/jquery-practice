@@ -1,0 +1,1 @@
+$(document).ready(function(){console.log("the document is ready and the script ran");var a=$(".hero .container").children().length;console.log(a)});
