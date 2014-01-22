@@ -2,12 +2,64 @@
 @import "compass";
 @import "compass/reset";
 
+$background-color: rgb(230, 200, 162);
+$neutral-color: rgb(67, 67, 67);
+$contrast-color: rgb(100, 87, 70);
+$exciting-color: rgb(211, 105, 98);
+
+
 body {
+}
+
+.container {
+  //
+  outline: 1px dashed gray;
+  //
+  width: 960px;
+  margin: 0 auto;
+  padding: 0px;
 }
 
 .hero {
   //
-  @include single-box-shadow(black, 0, 0, 20px, 0px, inset);
+  border: 10px solid;
+  border-color: transparent;
+  border-bottom-color: $neutral-color;
+  border-left-color: $neutral-color;
+
   //
-  outline: 1px solid grey;
+  background: $background-color;
+
+  .container {
+    margin: 20px auto;
+  }
+
 }
+
+.link-div {
+  &.begin-row {
+    margin-left: 0px;
+  }
+
+  position: relative;
+  margin-left: 11px;
+  margin-right: 0px;
+  margin-bottom: 9px;
+  margin-top: 9px;
+  display: inline-block;
+  background: $contrast-color;
+  height: 80px;
+  width: 147px;
+
+  &:hover .link-div-popup {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 75px solid transparent;
+    border-top-color: $exciting-color;
+    border-top-width: 10px;
+    margin: 0 auto;
+    top: 80px;
+  }
+  
+} // end link-div
