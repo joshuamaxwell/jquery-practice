@@ -43,7 +43,6 @@ body {
   //
   border: 10px solid;
   border-color: transparent;
-  border-bottom-color: $neutral-color;
   border-left-color: $neutral-color;
 
   //
@@ -112,6 +111,7 @@ body {
   text-align: center;
   margin: 20px auto;
   font: 20px;
+  letter-spacing: 2px;
 
 } // end of button
 
@@ -147,7 +147,7 @@ input {
 
     &:hover {
       opacity: 1;
-      height: 50px;
+      height: 45px;
       font-size: 25px;
     }
   }
@@ -164,12 +164,17 @@ input {
 
 .result {
   background: $background-color;
+  visibility: hidden;
   padding: 20px;
   font-size: 20px;
   color: $neutral-color;
   margin: 20px auto;
   width: 480px;
   @include border-radius(5px);
+
+  &.reveal {
+    visibility: visible;
+  }
 }
 
 
@@ -189,6 +194,7 @@ input {
     margin: 30px auto;
     height: $exampleHeight;
     background: $contrast-color;
+    overflow: hidden;
   }
 
   .explanation {
@@ -215,6 +221,48 @@ input {
 
 } // end of examples
 
+.ball {
+  height: 130px;
+  width: 130px;
+  margin: 20px;
+  background: $background-color;
+  position: relative;
+  @include border-radius(100%);
+}
+
+.gun {
+  position: absolute;
+  background: white;
+  left: 30px;
+  top: 150px;
+  width: 75px;
+  height: 30px;
+  overflow:  visible;
+  -webkit-transition: all 1s ease;
+
+  &.fired{
+    width: 85px;
+  }
+}
+
+.bullet {
+  background: $background-color;
+  width: 20px;
+  display: inline-block;
+  font-size: 14px;
+  height: 15px;
+  position: absolute;
+  vertical-align: middle;
+  right: 550px;
+  top: 160px;
+  -webkit-transition: all 0.3s ease;
+
+  
+  &.fired {
+    right:-20px;
+  }
+}
+
 #example1 {
 
   .color-changer {
@@ -222,11 +270,64 @@ input {
     height: 200px;
     margin: 60px auto;
     background: rgb(0, 0, 200);
+    -webkit-transition: all 1s ease;
   }
 
 
 } // end of .example1
 
 #example2 {
+  .anjelica {
+    margin-top: 65px;
+  }
 
+}
+
+#example3 {
+  .ball {
+    display: inline-block;
+    position: absolute;
+
+    &.a {
+      &:hover {
+        @include transform (scale(1.1, 1.1));
+      }
+
+    }
+
+    &.b {
+      left: 200px;
+      &:hover {
+        @include transform (scale(1.1, 1.1));
+
+      }
+    }
+
+    &.c {
+      &:hover {
+        @include transform (scale(1.1, 1.1));
+
+      }
+      left: 400px;
+    }
+
+    &.dropped {
+        bottom: 0px;
+    }
+  }
+
+} // end of example 3
+
+#example4 {
+
+}
+
+#example5 {
+  .ball {
+    -webkit-transition: all 0.51s ease;
+    height: 0px;
+    width: 0px;
+    display: inline-block;
+    margin: 0px, 0px, 0px, 0px;
+  }
 }
