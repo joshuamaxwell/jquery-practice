@@ -15,7 +15,7 @@ $(document).ready( function () {
 
 
   //Here's example number 2
-  $('#example2 .button').click ( function () {
+  $('#example2 div.button').click ( function () {
     var username = $('#example2 .username').val();
     $('#example2 .result').text("Are you excited yet, " + username + "? Because I am! Click 'submit' again to make this text disappear");
     $('#example2 .result').toggleClass('reveal');
@@ -48,9 +48,16 @@ $(document).ready( function () {
     console.log(circleSize);
     $('#example5 .ball').last().css('margin', 5);
     $('#example5 .ball').last().animate({width: circleSize+'px', height: circleSize+'px'}, 100 );
+    $('#example5 input').val('');
   });
 
+  //Here's example number 6
+  $('#example6 .anjelica .button').click( function() {
+    var userColor = $('#example6 .anjelica .userColor').val();
+    $('#example6 .color-changer').css("background", userColor);
+    $('#example6 .anjelica .userColor').val('');
 
+  });
 
 //I thought i could get jquery to number the boxes for me but i'm not
 //good enough at it yet
@@ -70,7 +77,7 @@ $(document).ready( function () {
 // http://stackoverflow.com/questions/8579643/simple-jquery-scroll-to-anchor-up-or-down-the-page
 //ACTUALLY ... i had to debug this so i'm going to claim it now
 
-$(".link-div > a").click(function(event){
+$("a").click(function(event){
 
     //prevent the default action for the click event
     event.preventDefault();

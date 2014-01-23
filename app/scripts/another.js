@@ -8,10 +8,12 @@
 var altima = {
   name: 'altima',
   locked: false,
+  trunkContents: ['umbrella', 'jumperCables', 'flashlight'],
   hitAtree: function(aPerson, aTree){
     aPerson.haveKeys=false;
     aTree.hitByCar = true;
     aTree.height = aTree.height - 50;
+    this.trunkContents.pop();
     aPerson.treesIveHit.push(aTree.type);
     console.log("oh noes! " + aPerson.name + " just hit a " + aTree.type + " tree.")
     aTree.speak();
@@ -71,7 +73,7 @@ var pineTree = {
   hitByCar: false,
   height: 100,
   speak: function(){
-    if(hitByCar){console.log("I've been hit!")};
+    if(this.hitByCar){console.log("I've been hit!")};
   }
 }
 
@@ -80,7 +82,7 @@ var oakTree = {
   hitByCar: false,
   height: 80,
   speak: function(){
-    console.log('Trees dont speak.');
+    if(this.hitByCar){console.log("I've been hit!")};
   }
 }
 

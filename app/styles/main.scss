@@ -13,6 +13,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
 .container {
   //
   outline: 1px dashed gray;
@@ -30,7 +37,7 @@ body {
   font-size: 70px;
   position: fixed;
   @include transform-origin (0,0);
-  @include transform (rotateZ(-90deg) translateX(-550px) translateY(30px));
+  @include transform (rotateZ(-90deg) translateX(-550px) translateY(20px));
 }
 
 .top-title {
@@ -55,17 +62,11 @@ body {
 
 }
 
+
 .link-div {
   
   &.begin-row {
     margin-left: 0px;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-    margin: 0px;
-    padding: 0px;
   }
 
   position: relative;
@@ -112,6 +113,7 @@ body {
   margin: 20px auto;
   font: 20px;
   letter-spacing: 2px;
+  cursor: pointer;
 
 } // end of button
 
@@ -217,9 +219,24 @@ input {
     width: 636px;
     height: $exampleHeight;
     display: inline-block;
+
+    & > a {
+      position: absolute;
+      background: $background-color;
+      bottom: -20px;
+      right: 0;
+    }
   }
 
 } // end of examples
+
+.color-changer {
+  width: 200px;
+  height: 200px;
+  margin: 60px auto;
+  background: rgb(0, 0, 200);
+  -webkit-transition: all 1s ease;
+}
 
 .ball {
   height: 130px;
@@ -265,13 +282,6 @@ input {
 
 #example1 {
 
-  .color-changer {
-    width: 200px;
-    height: 200px;
-    margin: 60px auto;
-    background: rgb(0, 0, 200);
-    -webkit-transition: all 1s ease;
-  }
 
 
 } // end of .example1
@@ -330,4 +340,17 @@ input {
     display: inline-block;
     margin: 0px, 0px, 0px, 0px;
   }
+}
+
+#example6 {
+  input {
+
+  }
+
+  .color-changer {
+    margin: 10px auto;
+    width: 125px;
+    height: 125px;
+  }
+
 }
