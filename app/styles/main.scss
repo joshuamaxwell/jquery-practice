@@ -32,6 +32,12 @@ body {
   @include transform (rotateZ(-90deg) translateX(-550px) translateY(10px));
 }
 
+.top-title {
+  color: $exciting-color;
+  font-size: 60px;
+  text-align: center;
+}
+
 .hero {
   //
   border: 10px solid;
@@ -55,7 +61,9 @@ body {
     margin-left: 0px;
   }
 
-  h3 {
+  a {
+    text-decoration: none;
+    color: white;
     margin: 0px;
     padding: 0px;
   }
@@ -89,7 +97,7 @@ body {
     top: 80px;
   }
 
-  &:hover h3 {
+  &:hover a {
     text-decoration: underline;
   }
 } // end link-div
@@ -134,7 +142,7 @@ body {
 
 } // end of examples
 
-.example1 {
+#example1 {
 
   .color-changer {
     width: 200px;
