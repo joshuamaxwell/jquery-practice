@@ -6,6 +6,7 @@ $background-color: rgb(230, 200, 162);
 $neutral-color: rgb(67, 67, 67);
 $contrast-color: rgb(100, 87, 70);
 $exciting-color: rgb(211, 105, 98);
+$light-neutral-color: #AFAFAF;
 
 
 body {
@@ -23,13 +24,13 @@ body {
 }
 
 .fixed-side-title {
-  color: white;
-  text-shadow: -2px  2px $background-color,
-                1px -1px $background-color;
+  color: $background-color;
+  text-shadow: -2px  2px white,
+                1px -1px white;
   font-size: 70px;
   position: fixed;
   @include transform-origin (0,0);
-  @include transform (rotateZ(-90deg) translateX(-550px) translateY(10px));
+  @include transform (rotateZ(-90deg) translateX(-550px) translateY(30px));
 }
 
 .top-title {
@@ -102,6 +103,78 @@ body {
   }
 } // end link-div
 
+.button {
+  @include border-top-right-radius (30px);
+  background: $exciting-color;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 20px auto;
+  font: 20px;
+
+} // end of button
+
+input {
+  width: 480px;
+  height: 80px;
+  font-size: 40px;
+  padding: 10px;
+  margin: 20px;
+  color: $neutral-color;
+  border: 5px solid $light-neutral-color;
+
+  &:focus {
+    outline: none;
+  }
+} // end of input
+
+.anjelica {
+  background: white;
+  position: relative;
+  width: 510px;
+  height: 110px;
+  margin: 20px auto;
+
+  .button {
+    opacity: 0.9;
+    position: absolute;
+    z-index: 10px;
+    right: 0;
+    bottom: 0;
+    margin: 0px;
+    padding: 0px;
+
+    &:hover {
+      opacity: 1;
+      height: 50px;
+      font-size: 25px;
+    }
+  }
+
+  input {
+    position: absolute;
+    z-index: 5px;
+    right: 0;
+    bottom: 0;
+    margin: 0px;
+    padding: 10px;
+  }
+} // end of anjelica-style
+
+.result {
+  background: $background-color;
+  padding: 20px;
+  font-size: 20px;
+  color: $neutral-color;
+  margin: 20px auto;
+  width: 480px;
+  @include border-radius(5px);
+}
+
+
+
+
 .examples {
   //
   outline: 1px dashed pink;
@@ -153,3 +226,7 @@ body {
 
 
 } // end of .example1
+
+#example2 {
+
+}

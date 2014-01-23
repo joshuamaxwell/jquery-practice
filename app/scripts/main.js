@@ -10,8 +10,20 @@ $(document).ready( function () {
 
 //Here's example number 1
   $('.color-changer').click ( function () {
-      $(this).css('background', 'red');
+    $(this).css('background', 'red');
   });
+
+  $('#example2 .button').click ( function () {
+    var username = $('#example2 .username').val();
+    $('#example2 .result').text("Are you excited yet, " + username + "? Because I am!");
+  });
+
+    //there must be a better way than copy pasting like this
+  $('#example2 .username').blur ( function () {
+    var username = $('#example2 .username').val();
+    $('#example2 .result').text("Are you excited yet, " + username + "? Because I am!");
+  });
+
 
 //example number 2
 
