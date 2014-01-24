@@ -104,12 +104,88 @@ $(document).ready( function () {
     $('#example10 .text-overlay').addClass('translate');
   });
 
+  //11
 
+  $('#example11 div.button').click( function(){
+     $('#example11 .color-changer').css({background: 'green'});
+  });
 
+  $('#example12 div.button').click( function() {
+    console.log('im going crazy')
+    $('#example12 .color-changer').css('border-color', 'white');
+  });
 
+  $('#example13 div.button').click( function() {
+    $('#example13 div.color-changer').css({borderRadius: '20px'});
+  });
 
+  $('#example14 div.button').click( function() {
+    $('#example14 div.color-changer').css({width: '230px', height: '215px'});
+  });
 
+  $('#example15 div.button').click( function() {
+    $('#example15 div.ball').css({visibility: 'hidden'});
+  });
 
+  $('#example16 div.button').click( function() {
+    $('#example16 div.ball').css({height: '0px', width: '0px'});
+  });
+
+  $('#example17 div.button').click( function() {
+  $('#example17 div.ball').toggleClass('float');
+  });
+
+  $('#example18 div.button').click( function () {
+    $('#example18 div.color-changer').css('transform', 'rotateZ(360deg)');
+  });
+
+  $('#example19 div.button').click( function(){
+    $('#example19 div.color-changer').text('OMG! omw....LOL....SHM NEWAYz. L8R');
+  });
+
+  $('#example20 div.button').click( function(){
+    $('#example20 div.ball').css('background','red');
+  });
+
+  $('#example21 div.button').click( function (){
+    $('#example21 div.color-changer').text('hi again')
+  });
+
+  $('#example22 div.button').click ( function(){
+    $('#example22 div.color-changer').text(" oh i'm just doing katas now");
+  });
+
+  $('#example23 div.button').click ( function (){
+    $('#example23 div.color-changer').text("I really just need to commit these shortcuts to muscle memory");
+  });
+
+  $('#example24 div.button').click ( function () {
+    $('#example24 div.color-changer').text("everyone else is going to get pizza");
+  }); 
+
+  $('#example25 div.button').click (function () {
+    $('#example25 div.color-changer').text("I really want to go too");
+  });
+
+  $('#example26 div.button').click (function (){
+    $('#example26 div.color-changer').text("I just realized this assignment is 9 minutes past due");
+  });
+
+  $('#example27 div.button').click (function (){
+    $('#example27 div.color-changer').text("This is starting to get easier");
+  });
+
+  $('#example28 div.button').click( function (){
+    $('#example28 div.color-changer').text("It's still not really fun though");
+  });
+
+  $('#example29 div.button').click( function(){
+    $('#example29 div.color-changer').text("making number 10 was waaaay cooler");
+  });
+
+  $('#example30 div.button').click( function() {
+    $('#example30 div.color-changer').text("build add commit push!");
+  });
 
 
 

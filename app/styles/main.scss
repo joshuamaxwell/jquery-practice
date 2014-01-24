@@ -130,7 +130,7 @@ a {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  margin: 20px auto;
+  margin: 25px 30px 15px;
   font: 20px;
   letter-spacing: 2px;
   cursor: pointer;
@@ -254,7 +254,7 @@ input {
 .color-changer {
   width: 200px;
   height: 200px;
-  margin: 30px;
+  margin: 15px 30px;
   background: rgb(0, 0, 200);
   -webkit-transition: all 1s ease;
 }
@@ -263,10 +263,15 @@ input {
   height: 130px;
   width: 130px;
   line-height: 130px;
-  margin: 20px;
+  margin: 20px 30px 10px;
   background: $background-color;
   position: relative;
+  @include single-transition(all, 1s, ease);
   @include border-radius(100%);
+
+  &.float {
+    @include box-shadow(-10px 10px 20px 2px black, inset 2px -2px 5px 2px gray);
+  }
 }
 
 .gun {
@@ -459,4 +464,14 @@ input {
       // transform: translate(-100px, 100px);
     }
   }
+}
+
+#example12 {
+  .color-changer{
+    border: 5px solid transparent;
+  }
+}
+
+#example17 {
+
 }
