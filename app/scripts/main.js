@@ -56,11 +56,32 @@ $(document).ready( function () {
     var userColor = $('#example6 .anjelica .userColor').val();
     $('#example6 .color-changer').css("background", userColor);
     $('#example6 .anjelica .userColor').val('');
+  });
 
+  //Here's example number 7
+  $(window).scroll(function () {
+    if (($(window).scrollTop() + $(window).height()*0.25 < $('#example7').offset().top)
+          || ($(window).scrollTop() + $(window).height()*0.25 > $('#example7').offset().top + 300)){
+      $('#example7 .ball').removeClass('fixed');
+    console.log('fixed removed')
+    } else {
+      $('#example7 .ball').addClass('fixed');
+      $('#example7 .ball').html($(window).scrollTop());
+    }
+  });
+
+  //Here's example number 8
+  $('#example8 .color-changer').mouseleave(function () {
+    console.log('the mouse left');
+    $('#example8 .tool-tip').addClass('hidden');
+  });
+  $('#example8 .color-changer').mouseenter(function () {
+    $('#example8 .tool-tip').removeClass('hidden');
   });
 
 //I thought i could get jquery to number the boxes for me but i'm not
 //good enough at it yet
+//well today I COULD do this..but i gotta move on for now
   // var numBoxes = $('.hero .container').children().length;
   // console.log(numBoxes);
   // var x = 0;

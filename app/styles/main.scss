@@ -2,9 +2,9 @@
 @import "compass";
 @import "compass/reset";
 
-$background-color: rgb(230, 200, 162);
+$background-color: rgb(220,  221, 204);
 $neutral-color: rgb(67, 67, 67);
-$contrast-color: rgb(100, 87, 70);
+$contrast-color: rgb(89, 75, 60);
 $exciting-color: rgb(211, 105, 98);
 $light-neutral-color: #AFAFAF;
 
@@ -22,7 +22,7 @@ a {
 
 .container {
   //
-  outline: 1px dashed gray;
+  // outline: 1px dashed gray;
   //
   position: relative;
   width: 960px;
@@ -42,22 +42,42 @@ a {
 
 .top-title {
   color: $exciting-color;
-  font-size: 60px;
+  font-size: 90px;
   text-align: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.tool-tip {
+  position: absolute;
+  background: rgba(67, 67, 67, 0.75);
+  border: 3px solid white;
+  padding: 40px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  width: 70px;
+  height: 70px;
+  @include border-top-left-radius(20px);
+  @include single-box-shadow(rgb(67, 67, 67), -3px, 3px, 3px, 0px);
+  @include transition(all 0.2s ease-in-out);
 }
 
 .hero {
   //
   border: 10px solid;
   border-color: transparent;
-  border-left-color: $neutral-color;
+  border-left-color: $background-color;
 
   //
-  background: $background-color;
+  background: white;
+  margin-bottom: 1200px;
 
   .container {
-    margin-top: 30px;
-    margin-bottom: 80px;
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
 
 }
@@ -91,14 +111,14 @@ a {
     position: absolute;
     width: 0px;
     height: 0px;
-    border: 75px solid transparent;
+    border: 73px solid transparent;
     border-top-color: $exciting-color;
     border-top-width: 10px;
     margin: 0 auto;
     top: 80px;
   }
 
-  &:hover a {
+  &:hover {
     text-decoration: underline;
   }
 } // end link-div
@@ -184,7 +204,7 @@ input {
 
 .examples {
   //
-  outline: 1px dashed pink;
+  // outline: 1px dashed pink;
   //
   position: relative;
 
@@ -193,7 +213,7 @@ input {
   .container {
     font-size: 20px;
     color: white;
-    margin: 30px auto;
+    margin: 30px auto 200px;
     height: $exampleHeight;
     background: $contrast-color;
     overflow: hidden;
@@ -201,7 +221,7 @@ input {
 
   .explanation {
     //
-    outline: 1px dashed lime;
+    // outline: 1px dashed lime;
     //
     line-height: 150%;
     letter-spacing: 1px;
@@ -213,7 +233,7 @@ input {
 
   .example {
     //
-    outline: 1px dashed orange;
+    // outline: 1px dashed orange;
     //
     position: relative;
     width: 636px;
@@ -224,7 +244,7 @@ input {
       position: absolute;
       background: $background-color;
       bottom: -20px;
-      right: 0;
+      right: -1px;
     }
   }
 
@@ -233,7 +253,7 @@ input {
 .color-changer {
   width: 200px;
   height: 200px;
-  margin: 60px auto;
+  margin: 30px;
   background: rgb(0, 0, 200);
   -webkit-transition: all 1s ease;
 }
@@ -241,6 +261,7 @@ input {
 .ball {
   height: 130px;
   width: 130px;
+  line-height: 130px;
   margin: 20px;
   background: $background-color;
   position: relative;
@@ -281,9 +302,9 @@ input {
 }
 
 #example1 {
-
-
-
+  .color-changer {
+    margin-left:  200px;
+  }
 } // end of .example1
 
 #example2 {
@@ -354,3 +375,60 @@ input {
   }
 
 }
+
+#example7 {
+
+  .ball{ 
+    @include single-transition(all, 0.5s, ease);
+    color: $background-color;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 80px;
+
+    &.fixed {
+      @include border-radius(0px);
+      position: fixed;
+      right: 50px;
+      margin-left: 30px;
+      top: 100px;
+      color: white;
+      background-color:  $exciting-color;
+      z-index: 100;
+    }
+  }
+
+}
+
+#example8 {
+  .color-changer {
+    position: relative;
+    background: $background-color;
+    margin-left:  200px;
+
+    .tool-tip{
+      top: 10px;
+      left: -146px;
+      height: 95px;
+      width: 95px;
+
+      &.hidden {
+        width: 25px;
+        margin-left: 146px;
+      }
+    }
+  }
+}
+
+#example9 {
+
+  .color-changer {
+    width: 280px;
+    height: 200px;
+    margin: 50px 20px 20px 100px;
+    background: url("http://lorempixel.com/g/280/200/nature");
+
+      &.bw {
+        background: url("http://lorempixel.com/280/200/nature");
+      }
+  } //end of color-changer div
+} // end of example9
