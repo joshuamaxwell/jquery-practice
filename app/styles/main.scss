@@ -152,7 +152,7 @@ input {
 } // end of input
 
 .anjelica {
-  background: white;
+  background: transparent;
   position: relative;
   width: 510px;
   height: 110px;
@@ -224,6 +224,7 @@ input {
     // outline: 1px dashed lime;
     //
     line-height: 150%;
+    font-size: 25px;
     letter-spacing: 1px;
     display: inline-block;
     vertical-align: top;
@@ -425,10 +426,37 @@ input {
     width: 280px;
     height: 200px;
     margin: 50px 20px 20px 100px;
-    background: url("http://lorempixel.com/g/280/200/nature");
+    @include single-transition(all, 0.15s, linear);
+    background: url("http://lorempixel.com/g/280/200/nature/10");
 
-      &.bw {
-        background: url("http://lorempixel.com/280/200/nature");
+      &.color {
+        background: url("http://lorempixel.com/280/200/nature/10");
       }
   } //end of color-changer div
 } // end of example9
+
+#example10 {
+  color: white;
+  overflow: hidden;
+  .text-overlay {
+    font-family: 'Stalemate', cursive;
+    width: 2660px;
+    position: absolute;
+    font-size: 100px;
+    left: -100px;
+    top: -200px;
+    line-height: 85%;
+    @include transform-origin(0px, 0px);
+    @include transform(scale(0.5));
+    @include transition(all 10s ease-in-out);
+
+    &.translate {
+      // @include translate(-100px, -100px);
+      @include transform-origin();
+      @include transform(translate(-100px, -100px) 
+                     rotateZ(-20deg) 
+                     scale(2, 2));
+      // transform: translate(-100px, 100px);
+    }
+  }
+}

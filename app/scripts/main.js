@@ -9,7 +9,7 @@ $(document).ready( function () {
   // $('.hero').css('height', windowHeight-20);
 
   //Here's example number 1
-  $('.color-changer').click ( function () {
+  $('#example1 .color-changer').click ( function () {
     $(this).css('background', 'red');
   });
 
@@ -63,7 +63,6 @@ $(document).ready( function () {
     if (($(window).scrollTop() + $(window).height()*0.25 < $('#example7').offset().top)
           || ($(window).scrollTop() + $(window).height()*0.25 > $('#example7').offset().top + 300)){
       $('#example7 .ball').removeClass('fixed');
-    console.log('fixed removed')
     } else {
       $('#example7 .ball').addClass('fixed');
       $('#example7 .ball').html($(window).scrollTop());
@@ -78,6 +77,42 @@ $(document).ready( function () {
   $('#example8 .color-changer').mouseenter(function () {
     $('#example8 .tool-tip').removeClass('hidden');
   });
+
+  //Here's example number 9
+  $('#example9 .color-changer').mouseenter(function() {
+    $(this).addClass('color');
+  });
+  $('#example9 .color-changer').mouseleave(function() {
+    $(this).removeClass('color');
+  });
+
+  //Here's example number 10
+  $('#example10 .anjelica .button').click( function() {
+    var favWord = $('#example10 .anjelica input').val();
+    var words = favWord + " ";
+    var i = 0;
+    while (i < 900) {
+      words = words + favWord + " ";
+      i++;
+    }
+    // $('#example10').prepend('<div class="text-overlay"></div>')
+// Why couldn't I have this click event prepend the div and then add the class without
+// the transition failing to execute? I comment this prepend out and just added it to the index.html manually
+    $('#example10 .text-overlay').text(words);
+    $('#example10 .explanation').animate({opacity: 0}, 500);
+    $('#example10 .anjelica').animate({opacity: 0.5}, 500);
+    $('#example10 .text-overlay').addClass('translate');
+  });
+
+
+
+
+
+
+
+
+
+
 
 //I thought i could get jquery to number the boxes for me but i'm not
 //good enough at it yet
