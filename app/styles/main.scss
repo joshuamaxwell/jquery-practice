@@ -252,10 +252,11 @@ input {
 } // end of examples
 
 .color-changer {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   margin: 15px 30px;
-  background: rgb(0, 0, 200);
+  padding: 10px;
+  background: #3E3E58;
   -webkit-transition: all 1s ease;
 }
 
@@ -282,7 +283,11 @@ input {
   width: 75px;
   height: 30px;
   overflow:  visible;
-  -webkit-transition: all 1s ease;
+  -webkit-transition: width 1s ease;
+
+  &:active {
+    @include box-shadow(5px 0px 2px 0px red);
+  }
 
   &.fired{
     width: 85px;
@@ -299,23 +304,24 @@ input {
   vertical-align: middle;
   right: 550px;
   top: 160px;
-  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all 0.75s ease;
 
   
   &.fired {
-    right:-20px;
+    right:-30px;
   }
 }
 
 #example1 {
   .color-changer {
-    margin-left:  200px;
+    margin-left: 175px;
+    margin-top:  50px;
   }
 } // end of .example1
 
 #example2 {
   .anjelica {
-    margin-top: 65px;
+    margin-top: 45px;
   }
 
 }
@@ -324,6 +330,9 @@ input {
   .ball {
     display: inline-block;
     position: absolute;
+    bottom: 150px;
+
+    @include transition(all 0.5s cubic-bezier(.91,1.59,.49,.7));
 
     &.a {
       &:hover {
@@ -366,6 +375,7 @@ input {
     width: 0px;
     display: inline-block;
     margin: 0px, 0px, 0px, 0px;
+    vertical-align: top;
   }
 }
 
@@ -410,6 +420,7 @@ input {
     position: relative;
     background: $background-color;
     margin-left:  200px;
+    margin-top: 40px;
 
     .tool-tip{
       top: 10px;

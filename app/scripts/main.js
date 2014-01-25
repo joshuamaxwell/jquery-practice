@@ -31,6 +31,7 @@ $(document).ready( function () {
   //Here's example number 3
   $('#example3 .ball').click( function () {
     $(this).toggleClass('dropped');
+    $(this).toggleClass('float');
   });
 
   //Here's example number 4
